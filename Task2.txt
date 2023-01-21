@@ -1,0 +1,18 @@
+
+Pseudo Code for the APIs using JAVA:
+
+Class:
+	String Loadmessages(int groupId){
+		resultSet rS=getRequest("SELECT Message FROM DATA WHERE GId=groupId ORDER BY TIME")				 	
+		return rS.get();
+	}				
+
+	void postMessage(int groupId,int msgId,String message){
+		postRequest("INSERT INTO DATA(GId,MSGId,Message,Time) VALUES(groupId,msgId,message,now())");		
+	}
+			
+
+
+
+Note:
+Server port 3000 can be configured in configuration file;
